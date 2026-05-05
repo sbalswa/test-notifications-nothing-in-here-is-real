@@ -28,7 +28,8 @@ jobs:
                     {"id": "FAKE-001", "shortDescription": {"text": "Test finding for notification pipeline"}, "defaultConfiguration": {"level": "error"}},
                     {"id": "FAKE-002", "shortDescription": {"text": "Second test finding - warning level"}, "defaultConfiguration": {"level": "warning"}},
                     {"id": "FAKE-003", "shortDescription": {"text": "Third finding - tests tasklist tracking"}, "defaultConfiguration": {"level": "error"}},
-                    {"id": "FAKE-004", "shortDescription": {"text": "Fourth finding - tests GraphQL issue linking"}, "defaultConfiguration": {"level": "warning"}}
+                    {"id": "FAKE-004", "shortDescription": {"text": "Fourth finding - tests GraphQL issue linking"}, "defaultConfiguration": {"level": "warning"}},
+                    {"id": "FAKE-005", "shortDescription": {"text": "Fifth finding - final E2E validation"}, "defaultConfiguration": {"level": "error"}}
                   ]
                 }
               },
@@ -36,7 +37,8 @@ jobs:
                 {"ruleId": "FAKE-001", "level": "error", "message": {"text": "Fake error."}, "locations": [{"physicalLocation": {"artifactLocation": {"uri": "README.md"}, "region": {"startLine": 1}}}]},
                 {"ruleId": "FAKE-002", "level": "warning", "message": {"text": "Fake warning."}, "locations": [{"physicalLocation": {"artifactLocation": {"uri": "README.md"}, "region": {"startLine": 2}}}]},
                 {"ruleId": "FAKE-003", "level": "error", "message": {"text": "Fake error 3."}, "locations": [{"physicalLocation": {"artifactLocation": {"uri": "README.md"}, "region": {"startLine": 3}}}]},
-                {"ruleId": "FAKE-004", "level": "warning", "message": {"text": "Fourth finding to test GraphQL trackedIssues linking."}, "locations": [{"physicalLocation": {"artifactLocation": {"uri": "README.md"}, "region": {"startLine": 4}}}]}
+                {"ruleId": "FAKE-004", "level": "warning", "message": {"text": "Fourth."}, "locations": [{"physicalLocation": {"artifactLocation": {"uri": "README.md"}, "region": {"startLine": 4}}}]},
+                {"ruleId": "FAKE-005", "level": "error", "message": {"text": "Final E2E test."}, "locations": [{"physicalLocation": {"artifactLocation": {"uri": "README.md"}, "region": {"startLine": 5}}}]}
               ]
             }]
           }
