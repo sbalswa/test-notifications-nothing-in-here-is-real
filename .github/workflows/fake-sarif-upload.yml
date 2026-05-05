@@ -24,24 +24,44 @@ jobs:
                 "driver": {
                   "name": "FakeScanner",
                   "version": "1.0.0",
-                  "rules": [{
-                    "id": "FAKE-001",
-                    "shortDescription": { "text": "Test finding for notification pipeline" },
-                    "defaultConfiguration": { "level": "error" }
-                  }]
+                  "rules": [
+                    {
+                      "id": "FAKE-001",
+                      "shortDescription": { "text": "Test finding for notification pipeline" },
+                      "defaultConfiguration": { "level": "error" }
+                    },
+                    {
+                      "id": "FAKE-002",
+                      "shortDescription": { "text": "Second test finding - warning level" },
+                      "defaultConfiguration": { "level": "warning" }
+                    }
+                  ]
                 }
               },
-              "results": [{
-                "ruleId": "FAKE-001",
-                "level": "error",
-                "message": { "text": "This is a fake finding to test the security event handler pipeline." },
-                "locations": [{
-                  "physicalLocation": {
-                    "artifactLocation": { "uri": "README.md" },
-                    "region": { "startLine": 1 }
-                  }
-                }]
-              }]
+              "results": [
+                {
+                  "ruleId": "FAKE-001",
+                  "level": "error",
+                  "message": { "text": "This is a fake finding to test the security event handler pipeline." },
+                  "locations": [{
+                    "physicalLocation": {
+                      "artifactLocation": { "uri": "README.md" },
+                      "region": { "startLine": 1 }
+                    }
+                  }]
+                },
+                {
+                  "ruleId": "FAKE-002",
+                  "level": "warning",
+                  "message": { "text": "Second fake finding at warning level - should map to high severity." },
+                  "locations": [{
+                    "physicalLocation": {
+                      "artifactLocation": { "uri": "README.md" },
+                      "region": { "startLine": 2 }
+                    }
+                  }]
+                }
+              ]
             }]
           }
           EOF
