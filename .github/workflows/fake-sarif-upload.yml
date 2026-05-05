@@ -11,7 +11,7 @@ jobs:
     permissions:
       security-events: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
 
       - name: Create fake SARIF
         run: |
@@ -47,7 +47,7 @@ jobs:
           EOF
 
       - name: Upload SARIF
-        uses: github/codeql-action/upload-sarif@v3
+        uses: github/codeql-action/upload-sarif@0daab03d71ff584ef619d027a3fd9146679c5d84
         with:
           sarif_file: results.sarif
           category: fake-scanner-test
