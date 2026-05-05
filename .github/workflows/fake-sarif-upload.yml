@@ -34,6 +34,11 @@ jobs:
                       "id": "FAKE-002",
                       "shortDescription": { "text": "Second test finding - warning level" },
                       "defaultConfiguration": { "level": "warning" }
+                    },
+                    {
+                      "id": "FAKE-003",
+                      "shortDescription": { "text": "Third finding - tests tasklist tracking" },
+                      "defaultConfiguration": { "level": "error" }
                     }
                   ]
                 }
@@ -42,24 +47,20 @@ jobs:
                 {
                   "ruleId": "FAKE-001",
                   "level": "error",
-                  "message": { "text": "This is a fake finding to test the security event handler pipeline." },
-                  "locations": [{
-                    "physicalLocation": {
-                      "artifactLocation": { "uri": "README.md" },
-                      "region": { "startLine": 1 }
-                    }
-                  }]
+                  "message": { "text": "Fake error finding." },
+                  "locations": [{"physicalLocation": {"artifactLocation": {"uri": "README.md"}, "region": {"startLine": 1}}}]
                 },
                 {
                   "ruleId": "FAKE-002",
                   "level": "warning",
-                  "message": { "text": "Second fake finding at warning level - should map to high severity." },
-                  "locations": [{
-                    "physicalLocation": {
-                      "artifactLocation": { "uri": "README.md" },
-                      "region": { "startLine": 2 }
-                    }
-                  }]
+                  "message": { "text": "Fake warning finding." },
+                  "locations": [{"physicalLocation": {"artifactLocation": {"uri": "README.md"}, "region": {"startLine": 2}}}]
+                },
+                {
+                  "ruleId": "FAKE-003",
+                  "level": "error",
+                  "message": { "text": "Third finding to test tasklist tracking in issue body." },
+                  "locations": [{"physicalLocation": {"artifactLocation": {"uri": "README.md"}, "region": {"startLine": 3}}}]
                 }
               ]
             }]
