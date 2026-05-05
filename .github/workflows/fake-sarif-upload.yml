@@ -1,0 +1,53 @@
+name: Test SARIF Upload
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  fake-scan:
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create fake SARIF
+        run: |
+          cat > results.sarif << 'EOF'
+          {
+            "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/main/sarif-2.1/schema/sarif-schema-2.1.0.json",
+            "version": "2.1.0",
+            "runs": [{
+              "tool": {
+                "driver": {
+                  "name": "FakeScanner",
+                  "version": "1.0.0",
+                  "rules": [{
+                    "id": "FAKE-001",
+                    "shortDescription": { "text": "Test finding for notification pipeline" },
+                    "defaultConfiguration": { "level": "error" }
+                  }]
+                }
+              },
+              "results": [{
+                "ruleId": "FAKE-001",
+                "level": "error",
+                "message": { "text": "This is a fake finding to test the security event handler pipeline." },
+                "locations": [{
+                  "physicalLocation": {
+                    "artifactLocation": { "uri": "README.md" },
+                    "region": { "startLine": 1 }
+                  }
+                }]
+              }]
+            }]
+          }
+          EOF
+
+      - name: Upload SARIF
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: results.sarif
+          category: fake-scanner-test
