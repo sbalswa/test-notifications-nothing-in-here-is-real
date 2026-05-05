@@ -25,43 +25,18 @@ jobs:
                   "name": "FakeScanner",
                   "version": "1.0.0",
                   "rules": [
-                    {
-                      "id": "FAKE-001",
-                      "shortDescription": { "text": "Test finding for notification pipeline" },
-                      "defaultConfiguration": { "level": "error" }
-                    },
-                    {
-                      "id": "FAKE-002",
-                      "shortDescription": { "text": "Second test finding - warning level" },
-                      "defaultConfiguration": { "level": "warning" }
-                    },
-                    {
-                      "id": "FAKE-003",
-                      "shortDescription": { "text": "Third finding - tests tasklist tracking" },
-                      "defaultConfiguration": { "level": "error" }
-                    }
+                    {"id": "FAKE-001", "shortDescription": {"text": "Test finding for notification pipeline"}, "defaultConfiguration": {"level": "error"}},
+                    {"id": "FAKE-002", "shortDescription": {"text": "Second test finding - warning level"}, "defaultConfiguration": {"level": "warning"}},
+                    {"id": "FAKE-003", "shortDescription": {"text": "Third finding - tests tasklist tracking"}, "defaultConfiguration": {"level": "error"}},
+                    {"id": "FAKE-004", "shortDescription": {"text": "Fourth finding - tests GraphQL issue linking"}, "defaultConfiguration": {"level": "warning"}}
                   ]
                 }
               },
               "results": [
-                {
-                  "ruleId": "FAKE-001",
-                  "level": "error",
-                  "message": { "text": "Fake error finding." },
-                  "locations": [{"physicalLocation": {"artifactLocation": {"uri": "README.md"}, "region": {"startLine": 1}}}]
-                },
-                {
-                  "ruleId": "FAKE-002",
-                  "level": "warning",
-                  "message": { "text": "Fake warning finding." },
-                  "locations": [{"physicalLocation": {"artifactLocation": {"uri": "README.md"}, "region": {"startLine": 2}}}]
-                },
-                {
-                  "ruleId": "FAKE-003",
-                  "level": "error",
-                  "message": { "text": "Third finding to test tasklist tracking in issue body." },
-                  "locations": [{"physicalLocation": {"artifactLocation": {"uri": "README.md"}, "region": {"startLine": 3}}}]
-                }
+                {"ruleId": "FAKE-001", "level": "error", "message": {"text": "Fake error."}, "locations": [{"physicalLocation": {"artifactLocation": {"uri": "README.md"}, "region": {"startLine": 1}}}]},
+                {"ruleId": "FAKE-002", "level": "warning", "message": {"text": "Fake warning."}, "locations": [{"physicalLocation": {"artifactLocation": {"uri": "README.md"}, "region": {"startLine": 2}}}]},
+                {"ruleId": "FAKE-003", "level": "error", "message": {"text": "Fake error 3."}, "locations": [{"physicalLocation": {"artifactLocation": {"uri": "README.md"}, "region": {"startLine": 3}}}]},
+                {"ruleId": "FAKE-004", "level": "warning", "message": {"text": "Fourth finding to test GraphQL trackedIssues linking."}, "locations": [{"physicalLocation": {"artifactLocation": {"uri": "README.md"}, "region": {"startLine": 4}}}]}
               ]
             }]
           }
